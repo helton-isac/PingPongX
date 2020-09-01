@@ -1,4 +1,4 @@
-package br.com.heltonsouza.pingpongx
+package br.com.hitg.pingpongx
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
