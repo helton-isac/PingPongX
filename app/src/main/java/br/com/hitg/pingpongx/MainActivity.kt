@@ -2,6 +2,7 @@ package br.com.hitg.pingpongx
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -13,15 +14,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.d("ESTADO", "onCreate")
+
         savedInstanceState?.let {
-            playerOneScore = it.getInt("playerOneScore")
-            playerTwoScore = it.getInt("playerTwoScore")
+            playerOneScore = it.getInt("playerOneScore", 0)
+            playerTwoScore = it.getInt("playerTwoScore", 0)
+            setUpScorePlayerOne()
+            setUpScorePlayerTwo()
         }
 
-        setupPlayers()
-        setupListeners()
-        setUpScorePlayerOne()
-        setUpScorePlayerTwo()
+        setUpPlayers()
+        setUpListeners()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -30,24 +34,36 @@ class MainActivity : AppCompatActivity() {
         outState.putInt("playerTwoScore", playerTwoScore)
     }
 
-    private fun setupListeners() {
+    private fun setUpListeners() {
         btPlayerOneScore.setOnClickListener {
             playerOneScore++
             setUpScorePlayerOne()
         }
+
         btPlayerTwoScore.setOnClickListener {
             playerTwoScore++
             setUpScorePlayerTwo()
         }
+
         btRevenge.setOnClickListener {
             rematch()
         }
+
         btFinishMatch.setOnClickListener {
             val telaPlayer = Intent(this, PlayerActivity::class.java)
-            startActivity(telaPlayer)
-            finish()
+            telaPlayer.putExtra("rematch", true)
+            startActivityForResult(telaPlayer, 1)
         }
     }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        intent = data
+        setUpPlayers()
+        rematch()
+    }
+
 
     private fun setUpScorePlayerOne() {
         tvPlayerOneScore.text = playerOneScore.toString()
@@ -57,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         tvPlayerTwoScore.text = playerTwoScore.toString()
     }
 
-    private fun setupPlayers() {
+    private fun setUpPlayers() {
         tvPlayerOneName.text = intent.getStringExtra(Constants.KEY_EXTRA_PLAYER_1)
         tvPlayerTwoName.text = intent.getStringExtra(Constants.KEY_EXTRA_PLAYER_2)
     }
@@ -67,5 +83,36 @@ class MainActivity : AppCompatActivity() {
         playerTwoScore = 0
         setUpScorePlayerOne()
         setUpScorePlayerTwo()
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("ESTADO", "onStart")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("ESTADO", "onRestart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("ESTADO", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("ESTADO", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("ESTADO", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("ESTADO", "onDestroy")
     }
 }
