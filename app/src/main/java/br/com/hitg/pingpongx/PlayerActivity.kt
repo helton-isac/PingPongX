@@ -14,8 +14,8 @@ class PlayerActivity : AppCompatActivity() {
 
         btStart.setOnClickListener {
             val proximaTela = Intent(this, MainActivity::class.java)
-            proximaTela.putExtra("player1", etPlayer1.text.toString())
-            proximaTela.putExtra("player2", etPlayer2.text.toString())
+            proximaTela.putExtra(Constants.KEY_EXTRA_PLAYER_1, etPlayer1.text.toString())
+            proximaTela.putExtra(Constants.KEY_EXTRA_PLAYER_2, etPlayer2.text.toString())
             startActivity(proximaTela)
             finish()
         }

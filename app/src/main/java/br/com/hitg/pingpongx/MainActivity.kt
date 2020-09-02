@@ -1,7 +1,7 @@
 package br.com.hitg.pingpongx
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupPlayers() {
-        tvPlayerOneName.text = intent.getStringExtra("player1")
-        tvPlayerTwoName.text = intent.getStringExtra("player2")
+        tvPlayerOneName.text = intent.getStringExtra(Constants.KEY_EXTRA_PLAYER_1)
+        tvPlayerTwoName.text = intent.getStringExtra(Constants.KEY_EXTRA_PLAYER_2)
     }
 }
