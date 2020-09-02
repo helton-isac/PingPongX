@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvPlayerOneScore"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="0"
@@ -39,13 +39,13 @@
         android:text="X"
         android:textAlignment="center"
         android:textSize="72sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintEnd_toStartOf="@+id/tvPlayerTwoScore"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/tvPlayerOneScore"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tvPlayerTwoScore"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="0"
@@ -58,55 +58,55 @@
         app:layout_constraintTop_toTopOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btPlayerTwoScore"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Ponto"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="@+id/tvPlayerTwoScore"
+        app:layout_constraintStart_toStartOf="@+id/tvPlayerTwoScore"
+        app:layout_constraintTop_toTopOf="@+id/btPlayerOneScore" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tvPlayerTwoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Visitante"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
+        app:layout_constraintEnd_toEndOf="@+id/tvPlayerTwoScore"
+        app:layout_constraintStart_toStartOf="@+id/tvPlayerTwoScore"
+        app:layout_constraintTop_toTopOf="@+id/tvPlayerOneName" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tvPlayerOneName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Casa"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintEnd_toEndOf="@+id/tvPlayerOneScore"
+        app:layout_constraintStart_toStartOf="@+id/tvPlayerOneScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayerOneScore" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btPlayerOneScore"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Ponto"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintEnd_toEndOf="@+id/tvPlayerOneScore"
+        app:layout_constraintStart_toStartOf="@+id/tvPlayerOneScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayerOneName" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btRevenge"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Revanche"
-        app:layout_constraintEnd_toEndOf="@+id/button5"
-        app:layout_constraintStart_toStartOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintEnd_toEndOf="@+id/btFinishMatch"
+        app:layout_constraintStart_toStartOf="@+id/btFinishMatch"
+        app:layout_constraintTop_toBottomOf="@+id/btFinishMatch" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btFinishMatch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -115,5 +115,5 @@
         android:text="Terminar Partida"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btPlayerOneScore" />
 </androidx.constraintlayout.widget.ConstraintLayout>
