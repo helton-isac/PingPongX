@@ -13,9 +13,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        if (savedInstanceState != null) {
+            playerOneScore = savedInstanceState.getInt("playerOneScore")
+            playerTwoScore = savedInstanceState.getInt("playerTwoScore")
+        }
         setupPlayers()
         setupListeners()
+        setUpScorePlayerOne()
+        setUpScorePlayerTwo()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("playerOneScore", playerOneScore)
+        outState.putInt("playerTwoScore", playerTwoScore)
     }
 
     private fun setupListeners() {

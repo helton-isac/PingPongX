@@ -3,6 +3,7 @@ package br.com.hitg.pingpongx
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_player.*
 
 class PlayerActivity : AppCompatActivity() {
@@ -19,6 +20,5 @@ class PlayerActivity : AppCompatActivity() {
             startActivity(proximaTela)
             finish()
         }
-
     }
 }
