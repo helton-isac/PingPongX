@@ -6,11 +6,34 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private var playerOneScore = 0
+    private var playerTwoScore = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         setupPlayers()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
+        btPlayerOneScore.setOnClickListener {
+            playerOneScore++
+            setUpScorePlayerOne()
+        }
+        btPlayerTwoScore.setOnClickListener {
+            playerTwoScore++
+            setUpScorePlayerTwo()
+        }
+    }
+
+    private fun setUpScorePlayerOne() {
+        tvPlayerOneScore.text = playerOneScore.toString()
+    }
+
+    private fun setUpScorePlayerTwo() {
+        tvPlayerTwoScore.text = playerTwoScore.toString()
     }
 
     private fun setupPlayers() {
